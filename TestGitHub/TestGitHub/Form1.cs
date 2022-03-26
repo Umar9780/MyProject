@@ -20,12 +20,13 @@ namespace TestGitHub
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            string userName = System.Security.Principal.WindowsIdentity.GetCurrent().Name;
             SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\saddam\Source\Repos\MyProject\TestGitHub\TestGitHub\Database1.mdf;Integrated Security=True");
             try
             {
                 if(con!= null)
                 {
-                    MessageBox.Show("Connection Established");
+                    MessageBox.Show(userName);
                 }
             }
             catch(Exception ex)
